@@ -7,6 +7,11 @@ Each component is summarized below. Full prompt texts are available in [`prompts
 
 ### Base Prompt
 
+Basic instructions the model follows: task definition, background knowledge, and output format
+* **Task Definition**: Specifies the task of extracting one metaphorical expression in a given Korean sentence
+* **Background Knowledge**: Explains the definition of metaphor, the target context (Korean restaurant reviews), and the 10 concept types used as metaphors
+* **Output Format**: Instructs to output a single string or an empty string, while restricting other responses to ensure a short-answer format
+
 ```
 Extract ONE metaphorical expression from the given Korean sentence that is related to the 10 target domains.
 
@@ -64,6 +69,8 @@ Answer:
 
 ### Persona Assignment
 
+Assigns a persona or role to the LLM within the prompt to enhance its understanding of the task to be performed (White et al. 2023)
+
 **Purpose**: Activate domain-expert knowledge
 
 ```
@@ -71,6 +78,9 @@ You are a linguistics expert specializing in metaphor analysis in Korean restaur
 ```
 
 ### Structured Format
+
+Delivers the task in a structured format to improve clarity and guide responses toward the intended task (Bsharat et al. 2023)
+* Prompt format distinguishes role, task, constraints, output format, and system instructions and user input is marked to improve clarity and guide responses toward the intended task
 
 **Purpose**: Reduce ambiguity via XML-like structuring
 
@@ -93,6 +103,9 @@ Input sentence: {input}
 
 ### Chain-of-Thought
 
+Applies the CoT prompt technique proposed by Wei et al. (2022)
+* Modified the output format to include a step-by-step reasoning process regarding the identification of a metaphor and an explanation of why it is classified as such within `<reasoning> … </reasoning>`  section before producing the final result
+
 **Purpose**: Step-by-step reasoning before answer
 
 ```
@@ -104,6 +117,11 @@ Answer: "metaphorical expression" or ""
 ```
 
 ### Theory-Guided Augmentation
+
+Provides theoretical background knowledge regarding Conceptual Metaphor Theory (CMT)
+* **Type A**: The theoretical background and definition such as Lakoff & Johnson’s CMT background
+* **Type B**: Examples of cross-domain mapping in CMT (e.g., PRICE IS PERSONALITY), which is inspired by few-shot prompting (Brown et al. 2023)
+* **Type C**: Provides combination of both Type A and Type B
 
 **Purpose**: Inject CMT knowledge into the prompt
 
