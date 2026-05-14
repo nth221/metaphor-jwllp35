@@ -220,8 +220,9 @@ See `evaluation/` for implementation.
 
 ## Contact
 
-[email] -->
+[email] 
 
 ---
+-->
 
 [![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fnth221%2Fmetaphor-jwllp35&label=visitors)](https://hitscounter.dev)
